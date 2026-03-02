@@ -1,0 +1,8 @@
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\bin\Debug\Ntag424DNA.exe.config
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\bin\Debug\Ntag424DNA.exe
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\bin\Debug\Ntag424DNA.pdb
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\obj\Debug\Ntag424DNA.Form1.resources
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\obj\Debug\Ntag424DNA.Properties.Resources.resources
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\obj\Debug\Ntag424DNA.csproj.GenerateResource.Cache
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\obj\Debug\Ntag424DNA.exe
+E:\MyCSharpProject\Ntag424DNA\Ntag424DNA\obj\Debug\Ntag424DNA.pdb
