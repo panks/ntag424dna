@@ -3,14 +3,14 @@
     partial class Form1
     {
         /// <summary>
-        /// 必需的设计器变量。
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// 清理所有正在使用的资源。
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows 窗体设计器生成的代码
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// 设计器支持所需的方法 - 不要
-        /// 使用代码编辑器修改此方法的内容。
+        /// Required method for Designer support - do not
+        /// modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -151,7 +151,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(270, 45);
             this.button7.TabIndex = 38;
-            this.button7.Text = "获取IC卡芯片型号";
+            this.button7.Text = "Get IC Card Chip Model";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -162,7 +162,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(438, 45);
             this.button8.TabIndex = 37;
-            this.button8.Text = "读出设备全球唯一的设备编号，作为加密狗用";
+            this.button8.Text = "Read Device Unique Serial Number (for dongle use)";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -174,7 +174,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(270, 45);
             this.button4.TabIndex = 36;
-            this.button4.Text = "让设备发出声响";
+            this.button4.Text = "Make Device Beep";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -210,7 +210,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 18);
             this.label8.TabIndex = 93;
-            this.label8.Text = "更改密钥:";
+            this.label8.Text = "Change Key:";
             // 
             // textBox3
             // 
@@ -229,7 +229,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 18);
             this.label6.TabIndex = 90;
-            this.label6.Text = "16进制新密钥:";
+            this.label6.Text = "Hex New Key:";
             // 
             // button6
             // 
@@ -238,7 +238,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(270, 42);
             this.button6.TabIndex = 89;
-            this.button6.Text = "更改密钥";
+            this.button6.Text = "Change Key";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -269,7 +269,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 18);
             this.label5.TabIndex = 87;
-            this.label5.Text = "认证密钥:";
+            this.label5.Text = "Auth Key:";
             // 
             // textBox6
             // 
@@ -288,7 +288,7 @@
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(161, 18);
             this.label31.TabIndex = 85;
-            this.label31.Text = "16进制旧认证密钥:";
+            this.label31.Text = "Hex Old Auth Key:";
             // 
             // label32
             // 
@@ -298,15 +298,15 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(107, 18);
             this.label32.TabIndex = 84;
-            this.label32.Text = "加解密方法:";
+            this.label32.Text = "Crypto Method:";
             // 
             // comboBox14
             // 
             this.comboBox14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox14.FormattingEnabled = true;
             this.comboBox14.Items.AddRange(new object[] {
-            "EV2First(命令71h)",
-            "EV2NonFirst(命令77h)"});
+            "EV2First (Cmd 71h)",
+            "EV2NonFirst (Cmd 77h)"});
             this.comboBox14.Location = new System.Drawing.Point(1308, 162);
             this.comboBox14.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox14.Name = "comboBox14";
@@ -320,7 +320,7 @@
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(270, 42);
             this.button18.TabIndex = 82;
-            this.button18.Text = "密钥认证";
+            this.button18.Text = "Key Authentication";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
@@ -332,7 +332,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 18);
             this.label4.TabIndex = 81;
-            this.label4.Text = "选择卡内应用:";
+            this.label4.Text = "Select Card App:";
             // 
             // comboBox3
             // 
@@ -367,12 +367,12 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "424卡的ISO MF Name",
-            "424卡的ISO File ID(3F00)",
-            "424卡的ISO DF Name",
-            "424卡的ISO File ID(E110)",
-            "Light卡的ISO DF Name",
-            "Light卡的ISO File ID(DF01)"});
+            "424 Card ISO MF Name",
+            "424 Card ISO File ID (3F00)",
+            "424 Card ISO DF Name",
+            "424 Card ISO File ID (E110)",
+            "Light Card ISO DF Name",
+            "Light Card ISO File ID (DF01)"});
             this.comboBox1.Location = new System.Drawing.Point(414, 110);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
@@ -397,7 +397,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 18);
             this.label1.TabIndex = 76;
-            this.label1.Text = "16进制目标:";
+            this.label1.Text = "Hex Target:";
             // 
             // button2
             // 
@@ -406,7 +406,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(270, 42);
             this.button2.TabIndex = 75;
-            this.button2.Text = "第二步：选择卡内已有的应用";
+            this.button2.Text = "Step 2: Select Existing Card Application";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -419,7 +419,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(1058, 24);
             this.label3.TabIndex = 74;
-            this.label3.Text = "注：每次拿开卡重放后都需要激活，才能驱动卡进入14443-4协议状态。";
+            this.label3.Text = "Note: After removing and replacing the card, activation is required to enter ISO 14443-4 protocol state.";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBox1
@@ -439,7 +439,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 18);
             this.label2.TabIndex = 72;
-            this.label2.Text = "16进制卡号:";
+            this.label2.Text = "Hex Card No.:";
             // 
             // button1
             // 
@@ -448,7 +448,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(270, 42);
             this.button1.TabIndex = 71;
-            this.button1.Text = "第一步：激活 Ntag 424";
+            this.button1.Text = "Step 1: Activate Ntag 424";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -459,7 +459,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(270, 42);
             this.button3.TabIndex = 95;
-            this.button3.Text = "将424卡配置成随机 UID 模式";
+            this.button3.Text = "Set 424 Card to Random UID Mode";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -472,7 +472,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(1328, 30);
             this.label7.TabIndex = 96;
-            this.label7.Text = "注：424卡更改为随机UID模式后，此卡将永久为随机模式！！！";
+            this.label7.Text = "WARNING: After switching 424 card to random UID mode, it will be permanently random!!!";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button5
@@ -482,7 +482,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(404, 42);
             this.button5.TabIndex = 97;
-            this.button5.Text = "例子1：动态UID(可解析出真正的UID)";
+            this.button5.Text = "Example 1: Dynamic UID (real UID resolvable)";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -495,7 +495,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(1628, 32);
             this.label9.TabIndex = 98;
-            this.label9.Text = "Ntag 424 DNA卡写入NDEF URI记录 ";
+            this.label9.Text = "Ntag 424 DNA Card - Write NDEF URI Record ";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button9
@@ -505,7 +505,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(404, 42);
             this.button9.TabIndex = 99;
-            this.button9.Text = "例子2：直接UID和计数器";
+            this.button9.Text = "Example 2: Plain UID and Counter";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -516,7 +516,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(404, 42);
             this.button10.TabIndex = 100;
-            this.button10.Text = "例子3：动态UID+加密数据+MAC";
+            this.button10.Text = "Example 3: Dynamic UID + Encrypted Data + MAC";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -538,7 +538,7 @@
             this.comboBox4.ForeColor = System.Drawing.Color.Red;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
-            "无前缀",
+            "No Prefix",
             "http://www.",
             "https://www.",
             "http://",
@@ -589,7 +589,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 18);
             this.label10.TabIndex = 103;
-            this.label10.Text = "前缀：";
+            this.label10.Text = "Prefix:";
             // 
             // textBox4
             // 
@@ -599,7 +599,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(181, 28);
             this.textBox4.TabIndex = 102;
-            this.textBox4.Text = "百度";
+            this.textBox4.Text = "Baidu";
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label11
@@ -611,7 +611,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(98, 18);
             this.label11.TabIndex = 101;
-            this.label11.Text = "标题名称：";
+            this.label11.Text = "Title:";
             // 
             // textBox7
             // 
@@ -629,7 +629,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(143, 18);
             this.label12.TabIndex = 106;
-            this.label12.Text = "光标处的偏移量:";
+            this.label12.Text = "Cursor Offset:";
             // 
             // panel1
             // 
@@ -695,7 +695,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(368, 42);
             this.button14.TabIndex = 145;
-            this.button14.Text = "更改卡片配置信息";
+            this.button14.Text = "Modify Card Configuration";
             this.button14.UseVisualStyleBackColor = false;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
@@ -704,8 +704,8 @@
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
-            "明文",
-            "密文+MAC保护"});
+            "Plaintext",
+            "Encrypted + MAC Protection"});
             this.comboBox5.Location = new System.Drawing.Point(483, 374);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox5.Name = "comboBox5";
@@ -728,7 +728,7 @@
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(107, 18);
             this.label38.TabIndex = 142;
-            this.label38.Text = "卡配置信息:";
+            this.label38.Text = "Card Config Info:";
             // 
             // label37
             // 
@@ -738,7 +738,7 @@
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(179, 18);
             this.label37.TabIndex = 141;
-            this.label37.Text = "本次操作的通信模式:";
+            this.label37.Text = "Comm Mode for This Operation:";
             // 
             // button13
             // 
@@ -747,7 +747,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(270, 42);
             this.button13.TabIndex = 139;
-            this.button13.Text = "读取卡片配置信息";
+            this.button13.Text = "Read Card Configuration";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -760,7 +760,7 @@
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(1617, 28);
             this.label34.TabIndex = 138;
-            this.label34.Text = "更改或读取文件配置(2号文件，为Standard Data File或 NDEF File，默认通信模式为明文)";
+            this.label34.Text = "Modify or Read File Config (File No. 2, Standard Data File or NDEF File, default comm mode is plaintext)";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label33
@@ -772,7 +772,7 @@
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(988, 28);
             this.label33.TabIndex = 136;
-            this.label33.Text = "当计数器的值达到计数器限额值时，或计数器的值达到16777215时，读ndef文件时将返回错误!";
+            this.label33.Text = "When the counter reaches the limit or 16777215, reading the NDEF file will return an error!";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // numericUpDown8
@@ -861,7 +861,7 @@
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(125, 18);
             this.label28.TabIndex = 130;
-            this.label28.Text = "计数器限额值:";
+            this.label28.Text = "Counter Limit:";
             // 
             // numericUpDown5
             // 
@@ -890,20 +890,20 @@
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(143, 18);
             this.label27.TabIndex = 128;
-            this.label27.Text = "计数器数据位置:";
+            this.label27.Text = "Counter Data Offset:";
             // 
             // comboBox_counterkey
             // 
             this.comboBox_counterkey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_counterkey.FormattingEnabled = true;
             this.comboBox_counterkey.Items.AddRange(new object[] {
-            "0 号",
-            "1 号",
-            "2 号",
-            "3 号",
-            "4 号",
-            "无需密码",
-            "禁止操作"});
+            "Key 0",
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4",
+            "No Password",
+            "Disabled"});
             this.comboBox_counterkey.Location = new System.Drawing.Point(482, 231);
             this.comboBox_counterkey.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_counterkey.Name = "comboBox_counterkey";
@@ -918,7 +918,7 @@
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(170, 18);
             this.label26.TabIndex = 126;
-            this.label26.Text = "SDM计数器检索密钥:";
+            this.label26.Text = "SDM Counter Retrieval Key:";
             // 
             // numericUpDown4
             // 
@@ -1034,19 +1034,19 @@
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(116, 18);
             this.label22.TabIndex = 118;
-            this.label22.Text = "UID镜像位置:";
+            this.label22.Text = "UID Mirror Offset:";
             // 
             // comboBox_cmackey
             // 
             this.comboBox_cmackey.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_cmackey.FormattingEnabled = true;
             this.comboBox_cmackey.Items.AddRange(new object[] {
-            "0 号",
-            "1 号",
-            "2 号",
-            "3 号",
-            "4 号",
-            "禁止操作"});
+            "Key 0",
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4",
+            "Disabled"});
             this.comboBox_cmackey.Location = new System.Drawing.Point(482, 180);
             this.comboBox_cmackey.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_cmackey.Name = "comboBox_cmackey";
@@ -1058,13 +1058,13 @@
             this.comboBox_SdmPower.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_SdmPower.FormattingEnabled = true;
             this.comboBox_SdmPower.Items.AddRange(new object[] {
-            "0 号",
-            "1 号",
-            "2 号",
-            "3 号",
-            "4 号",
-            "无需密码",
-            "禁止操作"});
+            "Key 0",
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4",
+            "No Password",
+            "Disabled"});
             this.comboBox_SdmPower.Location = new System.Drawing.Point(482, 141);
             this.comboBox_SdmPower.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_SdmPower.Name = "comboBox_SdmPower";
@@ -1079,7 +1079,7 @@
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(215, 18);
             this.label14.TabIndex = 115;
-            this.label14.Text = "面向CMAC计算的派生密钥:";
+            this.label14.Text = "CMAC Derived Key:";
             // 
             // label13
             // 
@@ -1089,7 +1089,7 @@
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(206, 18);
             this.label13.TabIndex = 114;
-            this.label13.Text = "SDM元数据读取访问权限:";
+            this.label13.Text = "SDM Metadata Read Access:";
             // 
             // checkBox_SDMNCF
             // 
@@ -1110,7 +1110,7 @@
             this.checkBox_CounterLimit.Name = "checkBox_CounterLimit";
             this.checkBox_CounterLimit.Size = new System.Drawing.Size(160, 22);
             this.checkBox_CounterLimit.TabIndex = 112;
-            this.checkBox_CounterLimit.Text = "启用计数器限额";
+            this.checkBox_CounterLimit.Text = "Enable Counter Limit";
             this.checkBox_CounterLimit.UseVisualStyleBackColor = true;
             // 
             // checkBox_CounterMirror
@@ -1121,7 +1121,7 @@
             this.checkBox_CounterMirror.Name = "checkBox_CounterMirror";
             this.checkBox_CounterMirror.Size = new System.Drawing.Size(160, 22);
             this.checkBox_CounterMirror.TabIndex = 111;
-            this.checkBox_CounterMirror.Text = "启用计数器镜像";
+            this.checkBox_CounterMirror.Text = "Enable Counter Mirror";
             this.checkBox_CounterMirror.UseVisualStyleBackColor = true;
             // 
             // checkBox_UID
@@ -1132,7 +1132,7 @@
             this.checkBox_UID.Name = "checkBox_UID";
             this.checkBox_UID.Size = new System.Drawing.Size(133, 22);
             this.checkBox_UID.TabIndex = 110;
-            this.checkBox_UID.Text = "启用UID镜像";
+            this.checkBox_UID.Text = "Enable UID Mirror";
             this.checkBox_UID.UseVisualStyleBackColor = true;
             // 
             // checkBox_SDM
@@ -1143,7 +1143,7 @@
             this.checkBox_SDM.Name = "checkBox_SDM";
             this.checkBox_SDM.Size = new System.Drawing.Size(133, 22);
             this.checkBox_SDM.TabIndex = 109;
-            this.checkBox_SDM.Text = "启用SDM镜像";
+            this.checkBox_SDM.Text = "Enable SDM Mirror";
             this.checkBox_SDM.UseVisualStyleBackColor = true;
             // 
             // label21
@@ -1156,7 +1156,7 @@
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(372, 81);
             this.label21.TabIndex = 108;
-            this.label21.Text = "注意：更改指令需要先认证的密码如设为禁止操作，以后将不能再用5F指令更改配置，如设为无需密码，下次更改配置需要用明文的通讯模式！";
+            this.label21.Text = "WARNING: If the change command auth key is set to Disabled, the 5F command can no longer change config. If set to No Password, next config change must use plaintext comm mode!";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // comboBox11
@@ -1164,12 +1164,12 @@
             this.comboBox11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox11.FormattingEnabled = true;
             this.comboBox11.Items.AddRange(new object[] {
-            "0 号",
-            "1 号",
-            "2 号",
-            "3 号",
-            "4 号",
-            "无需密码"});
+            "Key 0",
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4",
+            "No Password"});
             this.comboBox11.Location = new System.Drawing.Point(1474, 69);
             this.comboBox11.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox11.Name = "comboBox11";
@@ -1181,13 +1181,13 @@
             this.comboBox10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox10.FormattingEnabled = true;
             this.comboBox10.Items.AddRange(new object[] {
-            "0 号",
-            "1 号",
-            "2 号",
-            "3 号",
-            "4 号",
-            "无需密码",
-            "禁止操作"});
+            "Key 0",
+            "Key 1",
+            "Key 2",
+            "Key 3",
+            "Key 4",
+            "No Password",
+            "Disabled"});
             this.comboBox10.Location = new System.Drawing.Point(1040, 69);
             this.comboBox10.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox10.Name = "comboBox10";
@@ -1238,7 +1238,7 @@
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(233, 18);
             this.label20.TabIndex = 103;
-            this.label20.Text = "更改指令需要先认证的密码:";
+            this.label20.Text = "Auth Key for Change Cmd:";
             // 
             // label19
             // 
@@ -1248,7 +1248,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(233, 18);
             this.label19.TabIndex = 102;
-            this.label19.Text = "只写指令需要先认证的密码:";
+            this.label19.Text = "Auth Key for Write-Only Cmd:";
             // 
             // label18
             // 
@@ -1258,7 +1258,7 @@
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(233, 18);
             this.label18.TabIndex = 101;
-            this.label18.Text = "读写指令需要先认证的密码:";
+            this.label18.Text = "Auth Key for Read-Write Cmd:";
             // 
             // label17
             // 
@@ -1268,7 +1268,7 @@
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(233, 18);
             this.label17.TabIndex = 100;
-            this.label17.Text = "只读指令需要先认证的密码:";
+            this.label17.Text = "Auth Key for Read-Only Cmd:";
             // 
             // label16
             // 
@@ -1279,7 +1279,7 @@
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(207, 26);
             this.label16.TabIndex = 99;
-            this.label16.Text = "尽量不更改这里！！！";
+            this.label16.Text = "Avoid changing this!!!";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label15
@@ -1290,16 +1290,16 @@
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 18);
             this.label15.TabIndex = 98;
-            this.label15.Text = "通讯模式:";
+            this.label15.Text = "Comm Mode:";
             // 
             // comboBox7
             // 
             this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Items.AddRange(new object[] {
-            "明文",
-            "MAC保护",
-            "密文+MAC保护(默认)"});
+            "Plaintext",
+            "MAC Protection",
+            "Encrypted + MAC (Default)"});
             this.comboBox7.Location = new System.Drawing.Point(102, 32);
             this.comboBox7.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox7.Name = "comboBox7";
@@ -1314,7 +1314,7 @@
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(223, 22);
             this.checkBox6.TabIndex = 110;
-            this.checkBox6.Text = "需要认证密码，密码号:";
+            this.checkBox6.Text = "Requires Auth Key, Key No.:";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
@@ -1354,7 +1354,7 @@
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(161, 18);
             this.label35.TabIndex = 114;
-            this.label35.Text = "16进制旧认证密钥:";
+            this.label35.Text = "Hex Old Auth Key:";
             // 
             // label36
             // 
@@ -1364,16 +1364,16 @@
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(89, 18);
             this.label36.TabIndex = 113;
-            this.label36.Text = "通信模式:";
+            this.label36.Text = "Comm Mode:";
             // 
             // comboBox13
             // 
             this.comboBox13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox13.FormattingEnabled = true;
             this.comboBox13.Items.AddRange(new object[] {
-            "明文",
-            "MAC保护",
-            "密文+MAC保护"});
+            "Plaintext",
+            "MAC Protection",
+            "Encrypted + MAC Protection"});
             this.comboBox13.Location = new System.Drawing.Point(1164, 435);
             this.comboBox13.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox13.Name = "comboBox13";
@@ -1388,7 +1388,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(200, 42);
             this.button11.TabIndex = 116;
-            this.button11.Text = "URI链接 写入卡片";
+            this.button11.Text = "Write URI to Card";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -1400,7 +1400,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(200, 42);
             this.button12.TabIndex = 117;
-            this.button12.Text = "读取卡中NDEF记录";
+            this.button12.Text = "Read NDEF from Card";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -1412,7 +1412,7 @@
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(295, 22);
             this.checkBox1.TabIndex = 118;
-            this.checkBox1.Text = "解析镜像，SDM元 数据读取密钥:";
+            this.checkBox1.Text = "Parse Mirror, SDM Metadata Read Key:";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox10
@@ -1432,7 +1432,7 @@
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(125, 18);
             this.label39.TabIndex = 120;
-            this.label39.Text = "CMAC验证密钥:";
+            this.label39.Text = "CMAC Verify Key:";
             // 
             // textBox11
             // 
@@ -1457,7 +1457,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(93, 82);
             this.button15.TabIndex = 123;
-            this.button15.Text = "读取真实UID";
+            this.button15.Text = "Read Real UID";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -1524,7 +1524,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ntag 424 DNA标签读写";
+            this.Text = "Ntag 424 DNA Tag Reader/Writer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.editkeyid)).EndInit();

@@ -115,106 +115,106 @@ namespace Ntag424DNA
             switch (errno)
             {
                 case 0:
-                    MessageBox.Show("操作成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Operation successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 8:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，未寻到卡，请将卡拿开卡后再放到感应区!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", card not found. Please remove and replace the card on the reader!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 23:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，驱动程序错误或尚未安装！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", driver error or not installed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 24:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，操作超时，一般是动态库没有反映！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", operation timed out, DLL not responding!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 25:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，发送字数不够！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", insufficient bytes sent!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 26:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，发送的CRC错！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", sent CRC error!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 27:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，接收的字数不够！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", insufficient bytes received!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 28:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，接收的CRC错！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", received CRC error!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 47:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，读文件失败，请检查通信模式是否正确！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", read file failed. Please check if comm mode is correct!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 50:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，RATS错误，厂家调试代码，用户不需理会!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", RATS error (manufacturer debug code, can be ignored)!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 51:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，PPS错误，厂家调试代码，用户不需理会!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", PPS error (manufacturer debug code, can be ignored)!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 52:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，已进入了14443-4协议状态，可进行CPU卡功能所有操作了!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", already in ISO 14443-4 protocol state, all CPU card operations available!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 53:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，CPU卡功能通讯错误!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", CPU card communication error!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 54:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，数据不足，需要接着发送未完成的数据至卡上!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", insufficient data, remaining data needs to be sent to card!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 55:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，发送ACK指令给卡，让卡接着发送数据回来!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", send ACK to card to request more data!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 56:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，清空根目录失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", failed to clear root directory!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 57:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，卡片不支持Forum_Type4协议，请先认证打勾选中“需要认证密码再写入”再试，如果还有此提示，可能该卡不是Forum_Type4_Tag卡!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", card does not support Forum_Type4 protocol. Please authenticate first by checking 'Requires Auth Key', then retry. If this still appears, the card may not be a Forum_Type4_Tag card!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 58:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，卡片初始化失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", card initialization failed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 59:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，分配的空间不足!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", insufficient allocated space!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 60:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，本次操作的实体已存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", the entity already exists!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 61:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，无足够空间!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", insufficient space!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 62:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，文件不存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", file does not exist!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 63:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，权限不足,有可能是用只读密码认证，导致无法更改读写密码或无法写文件!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", insufficient permissions. Possibly authenticated with read-only key, unable to change read-write key or write file!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 64:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，密码不存在，或密钥文件未创建!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", key does not exist or key file not created!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 65:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，传送长度错误!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", transfer length error!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 66:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，Le错误，即接收的数据长度指定过大!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", Le error, specified receive data length too large!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 67:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，功能不支持或卡中无MF 或卡片已锁定!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", function not supported, no MF in card, or card is locked!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 68:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，密码认证错识次数过多，该密码已被锁死!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", too many wrong password attempts, key is locked!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 86:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，更改后的密码长度必须和创建时的长度一致!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", new key length must match the original key length!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 87:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，应用目录不存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", application directory does not exist!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 88:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，应用文件不存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", application file does not exist!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;                
                 case 90:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，读取文件时返回的长度不足，数据可能不正确!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", returned data length insufficient when reading file, data may be incorrect!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 91:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，一次读文件的长度不能超过255!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", single read length cannot exceed 255!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 92:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，一次写文件的长度不能超过247!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", single write length cannot exceed 247!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 case 70:
                 case 71:
@@ -232,10 +232,10 @@ namespace Ntag424DNA
                 case 83:
                 case 84:
                 case 85:
-                    MessageBox.Show("错误代码：" + errno.ToString("D") + "，密码错误，剩余次数为" + Convert.ToString(errno - 70) + "，如果为0，该密码将锁死，无法再认证", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error code: " + errno.ToString("D") + ", wrong password, remaining attempts: " + Convert.ToString(errno - 70) + ". If 0, this key will be permanently locked.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
                 default:
-                    MessageBox.Show("操作失败，返回错误代码！" + Convert.ToString(errno), "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Operation failed, error code: " + Convert.ToString(errno), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
             return 0;
@@ -268,132 +268,132 @@ namespace Ntag424DNA
             switch (inputstr)
             {
                 case "9000":
-                    RetTextFromStr = "成功！";
+                    RetTextFromStr = "Success!";
                     pcdbeep(20);
                     break;
                 case "9100":
-                    RetTextFromStr = "成功！";
+                    RetTextFromStr = "Success!";
                     pcdbeep(20);
                     break;
                 case "6281":
-                    RetTextFromStr = "回送的数据可能错误！";
+                    RetTextFromStr = "Returned data may be incorrect!";
                     break;
                 case "6283":
-                    RetTextFromStr = "选择文件无效，文件或密钥校验错误";
+                    RetTextFromStr = "Selected file invalid, file or key checksum error";
                     break;
                 case "6400":
-                    RetTextFromStr = "状态标志未改变";
+                    RetTextFromStr = "Status flag not changed";
                     break;
                 case "6581":
-                    RetTextFromStr = "写 EEPROM 不成功！";
+                    RetTextFromStr = "EEPROM write failed!";
                     break;
                 case "6700":
-                    RetTextFromStr = "长度错误";
+                    RetTextFromStr = "Length error";
                     break;
                 case "6900":
-                    RetTextFromStr = "CLA 与线路保护要求不匹配";
+                    RetTextFromStr = "CLA does not match line protection requirements";
                     break;
                 case "6901":
-                    RetTextFromStr = "无效的状态！";
+                    RetTextFromStr = "Invalid state!";
                     break;
                 case "6981":
-                    RetTextFromStr = "命令与文件结构不相容";
+                    RetTextFromStr = "Command incompatible with file structure";
                     break;
                 case "6982":
-                    RetTextFromStr = "不满足安全状态";
+                    RetTextFromStr = "Security condition not satisfied";
                     break;
                 case "6983":
-                    RetTextFromStr = "密钥被锁死！";
+                    RetTextFromStr = "Key is locked!";
                     break;
                 case "6984":
-                    RetTextFromStr = "MAC格式不符合";
+                    RetTextFromStr = "MAC format mismatch";
                     break;
                 case "6985":
-                    RetTextFromStr = "使用条件不满足";
+                    RetTextFromStr = "Usage conditions not satisfied";
                     break;
                 case "6986":
-                    RetTextFromStr = "请先选择文件！";
+                    RetTextFromStr = "Please select a file first!";
                     break;
                 case "6987":
-                    RetTextFromStr = "无安全报文";
+                    RetTextFromStr = "No secure messaging";
                     break;
                 case "6988":
-                    RetTextFromStr = "安全报文数据项不正确";
+                    RetTextFromStr = "Secure messaging data item incorrect";
                     break;
                 case "6A80":
-                    RetTextFromStr = "数据域参数错误！";
+                    RetTextFromStr = "Data field parameter error!";
                     break;
                 case "6A81":
-                    RetTextFromStr = "功能不支持或卡中无MF 或卡片已锁定";
+                    RetTextFromStr = "Function not supported, no MF in card, or card is locked";
                     break;
                 case "6A82":
-                    RetTextFromStr = "文件未找到";
+                    RetTextFromStr = "File not found";
                     break;
                 case "6A83":
-                    RetTextFromStr = "记录未找到！";
+                    RetTextFromStr = "Record not found!";
                     break;
                 case "6A84":
-                    RetTextFromStr = "文件无足够空间";
+                    RetTextFromStr = "Insufficient space in file";
                     break;
                 case "6A86":
-                    RetTextFromStr = "参数P1 P2 错";
+                    RetTextFromStr = "Parameter P1 P2 error";
                     break;
                 case "6A88":
-                    RetTextFromStr = "密钥未找到！";
+                    RetTextFromStr = "Key not found!";
                     break;
                 case "6B00":
-                    RetTextFromStr = "在达到Le/Lc 字节之前文件结束，偏移量错误";
+                    RetTextFromStr = "File end reached before Le/Lc bytes, offset error";
                     break;
                 case "6E00":
-                    RetTextFromStr = "无效的CLA";
+                    RetTextFromStr = "Invalid CLA";
                     break;
                 case "6F00":
-                    RetTextFromStr = "数据无效！";
+                    RetTextFromStr = "Invalid data!";
                     break;
                 case "9302":
-                    RetTextFromStr = "MAC 错误";
+                    RetTextFromStr = "MAC error";
                     break;
                 case "9303":
-                    RetTextFromStr = "应用已被锁定";
+                    RetTextFromStr = "Application is locked";
                     break;
                 case "9401":
-                    RetTextFromStr = "金额不足！";
+                    RetTextFromStr = "Insufficient balance!";
                     break;
                 case "9403":
-                    RetTextFromStr = "密钥未找到！";
+                    RetTextFromStr = "Key not found!";
                     break;
                 case "9406":
-                    RetTextFromStr = "所需的MAC 不可用！";
+                    RetTextFromStr = "Required MAC not available!";
                     break;
                 case "91AE":
-                    RetTextFromStr = "认证失败，请检查命行的参数和前期计算是否错误！";
+                    RetTextFromStr = "Authentication failed, please check parameters and calculations!";
                     break;
                 case "91CA":
-                    RetTextFromStr = "上一个命令未完全完成！";
+                    RetTextFromStr = "Previous command not fully completed!";
                     break;
                 case "917E":
-                    RetTextFromStr = "指令长度错误！";
+                    RetTextFromStr = "Instruction length error!";
                     break;
                 case "9140":
-                    RetTextFromStr = "当前目录或应用密钥不存在，请先选择正确的目录或应用！";
+                    RetTextFromStr = "Current directory or application key does not exist, please select the correct directory or application first!";
                     break;
                 case "919D":
-                    RetTextFromStr = "处于未验证密码的状态，该指令无法操作！";
+                    RetTextFromStr = "Password not verified, this command cannot operate!";
                     break;
                 case "911E":
-                    RetTextFromStr = "MAC错误！";
+                    RetTextFromStr = "MAC error!";
                     break;
                 case "91F0":
-                    RetTextFromStr = "该文件号不存在！";
+                    RetTextFromStr = "This file number does not exist!";
                     break;
                 case "919E":
-                    RetTextFromStr = "参数无效！";
+                    RetTextFromStr = "Invalid parameter!";
                     break;
                 case "91BE":
-                    RetTextFromStr = "试图读取/写入的数据超出文件/记录的边界！";
+                    RetTextFromStr = "Attempted to read/write data beyond file/record boundaries!";
                     break;
                 case "91A0":
-                    RetTextFromStr = "请求的 AID 不存在！";
+                    RetTextFromStr = "Requested AID does not exist!";
                     break;
                 default:
                     if (inputstr.Substring(0, 3) == "63C")
@@ -401,13 +401,13 @@ namespace Ntag424DNA
                         int i = Convert.ToInt16(inputstr.Substring(3, 1), 16);
                         if (i > 0)
                         {
-                            RetTextFromStr = "再试 " + i.ToString("D") + " 次错误密码将锁定！";
+                            RetTextFromStr = i.ToString("D") + " more wrong attempts will lock this key!";
                         }
-                        else { RetTextFromStr = "密码已被锁定"; }
+                        else { RetTextFromStr = "Key is locked"; }
                     }
                     else
                     {
-                        RetTextFromStr = "未知的异常";
+                        RetTextFromStr = "Unknown exception";
                     }
                     break;
             }
@@ -518,7 +518,7 @@ namespace Ntag424DNA
             if (status == 0)
             {
                 pcdbeep(50);
-                MessageBox.Show("设备的序列号为：" + devno[0].ToString("D3") + "-" + devno[1].ToString("D3") + "-" + devno[2].ToString("D3") + "-" + devno[3].ToString("D3"), "示例程序", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Device serial number: " + devno[0].ToString("D3") + "-" + devno[1].ToString("D3") + "-" + devno[2].ToString("D3") + "-" + devno[3].ToString("D3"), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else { MessageDispInfo(status); }
         }
@@ -541,7 +541,7 @@ namespace Ntag424DNA
             else
             {
                 pcdbeep(20);
-                MessageBox.Show("获取IC卡芯片型号操作，卡片返回代码：" + retstr + "\r\n型号：" + cardtypestr, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Get IC card chip model, card return code: " + retstr + "\r\nModel: " + cardtypestr, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -614,7 +614,7 @@ namespace Ntag424DNA
 
             if (checkhexstr(textBox2.Text.Trim(), datalen, databuf) == false)
             {
-                MessageBox.Show("十六进制目标ID输入错误，请输入 " + datalen.ToString("D") + " 字节的目标ID！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hex target ID input error, please enter " + datalen.ToString("D") + " bytes of target ID!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -659,22 +659,22 @@ namespace Ntag424DNA
 
                 if (status == 0)
                 {
-                    MessageBox.Show("选择卡内应用操作卡片返回代码：" + strls + "，说明：" + RetTextFromStr(strls), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Select card app return code: " + strls + ", Description: " + RetTextFromStr(strls), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("选择卡内应用操作卡片返回异常代码：" + status.ToString("D") + "，说明：还有剩余数据没接收完，请再发AA继续接收后面的数据！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Select card app returned error code: " + status.ToString("D") + ", Description: remaining data not received, please send AA to continue receiving!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
                 if (status == 53)
                 {
-                    MessageBox.Show("选择卡内应用操作卡片返回异常代码：" + status.ToString("D") + "，说明：已出现发送无线信息后CPU卡没响应，请重新拿开卡后再放到感应区，再重新点【第一步：CPU卡复位】。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Select card app returned error code: " + status.ToString("D") + ", Description: CPU card not responding. Please remove and replace the card, then click [Step 1: Activate Ntag 424].", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("选择卡内应用操作卡片返回异常代码：" + status.ToString("D"), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Select card app returned error code: " + status.ToString("D"), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -704,7 +704,7 @@ namespace Ntag424DNA
                     verstr = myver[0].ToString("X2");
                     codestr = mycode[0].ToString("X2");
                     textBox1.Text = cardhohex;
-                    MessageBox.Show("激活Desfire卡成功，可以接着重复操作第二步进行调试了。\r\n" + "16进制卡号：" + cardhohex + "\r\n参数：" + parastr + "\r\n版本信息：" + verstr + "\r\n厂商代码(复旦为90)：" + codestr, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Desfire card activation successful, you can proceed with Step 2 for debugging.\r\n" + "Hex Card No.: " + cardhohex + "\r\nParameters: " + parastr + "\r\nVersion Info: " + verstr + "\r\nManufacturer Code (Fudan=90): " + codestr, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -713,7 +713,7 @@ namespace Ntag424DNA
                     verstr = myver[0].ToString("X2");
                     codestr = mycode[0].ToString("X2");
                     textBox1.Text = cardhohex;
-                    MessageBox.Show("激活Fm1208CPU卡成功，可以接着重复操作第二步进行调试了。\r\n" + "16进制卡号：" + cardhohex + "\r\n参数：" + parastr + "\r\n版本信息：" + verstr + "\r\n厂商代码(复旦为90)：" + codestr, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Fm1208 CPU card activation successful, you can proceed with Step 2 for debugging.\r\n" + "Hex Card No.: " + cardhohex + "\r\nParameters: " + parastr + "\r\nVersion Info: " + verstr + "\r\nManufacturer Code (Fudan=90): " + codestr, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -731,7 +731,7 @@ namespace Ntag424DNA
 
             if (checkhexstr(textBox6.Text.Trim(), keylen, authkeybuf) == false)
             {
-                MessageBox.Show("十六进制认证密钥输入错误，请输入 " + keylen.ToString("D") + " 字节的16进制认证密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hex auth key input error, please enter " + keylen.ToString("D") + " bytes of hex auth key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             byte status = desfireauthkeyev2(authkeybuf, Convert.ToByte(keyid.Value), Convert.ToByte(comboBox14.SelectedIndex), retsw);
@@ -739,11 +739,11 @@ namespace Ntag424DNA
 
             if (status > 0)
             {
-                MessageBox.Show("认证密码操作返回异常：" + status.ToString("D") + "，卡片返回代码：" + retstr + "，说明：" + RetTextFromStr(retstr), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Key authentication returned error: " + status.ToString("D") + ", card return code: " + retstr + ", Description: " + RetTextFromStr(retstr), "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("认证密码操作，卡片返回代码：" + retstr + "，说明：" + RetTextFromStr(retstr), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Key authentication, card return code: " + retstr + ", Description: " + RetTextFromStr(retstr), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -757,13 +757,13 @@ namespace Ntag424DNA
 
             if (checkhexstr(textBox3.Text.Trim(), keylen, newkeybuf) == false)
             {
-                MessageBox.Show("十六进制新密钥输入错误，请输入 " + keylen.ToString("D") + " 字节的16进制新密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hex new key input error, please enter " + keylen.ToString("D") + " bytes of hex new key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (checkhexstr(textBox6.Text.Trim(), keylen, oldkeybuf) == false)
             {
-                MessageBox.Show("十六进制旧密钥输入错误，请输入 " + keylen.ToString("D") + " 字节的16进制旧密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hex old key input error, please enter " + keylen.ToString("D") + " bytes of hex old key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -773,24 +773,24 @@ namespace Ntag424DNA
 
             if (status > 0)
             {
-                MessageBox.Show("更改卡密钥操作返回异常：" + status.ToString("D") + "，卡片返回代码：" + retstr + "，说明：" + RetTextFromStr(retstr), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Change key returned error: " + status.ToString("D") + ", card return code: " + retstr + ", Description: " + RetTextFromStr(retstr), "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (retstr == "91AE")
                 {
-                    MessageBox.Show("更改卡密钥操作返回异常：" + status.ToString("D") + "，卡片返回代码：" + retstr + "，说明：更改密码指令被禁止或密码未认证或密码不对，请先用0号密码认证后再试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Change key returned error: " + status.ToString("D") + ", card return code: " + retstr + ", Description: Change key command disabled, key not authenticated, or key incorrect. Please authenticate with Key 0 first!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("更改卡密钥操作，卡片返回代码：" + retstr + "，说明：" + RetTextFromStr(retstr), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Change key operation, card return code: " + retstr + ", Description: " + RetTextFromStr(retstr), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("此功能已经过测试证明有效,为防止测试时把卡改成动态UID后不可恢复,暂不开放此功能，如需更改，自行修改代码，后果自负！", "严重警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK) { 
+            if (MessageBox.Show("This function has been tested and proven effective. To prevent irreversible random UID changes during testing, this function is currently disabled. Modify the source code at your own risk!", "SEVERE WARNING", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK) { 
             }
             return;
             
@@ -802,24 +802,24 @@ namespace Ntag424DNA
             string retstr = retsw[0].ToString("X2") + retsw[1].ToString("X2");
             if (status > 0)
             {
-                MessageBox.Show("更改卡操作操作返回异常：" + status.ToString("D") + "，卡片返回代码：" + retstr + "，说明：" + RetTextFromStr(retstr), "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Change config returned error: " + status.ToString("D") + ", card return code: " + retstr + ", Description: " + RetTextFromStr(retstr), "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 if (retstr == "9100")
                 {
                     pcdbeep(20);
-                    MessageBox.Show("更改配置成功！" , "提示", MessageBoxButtons.OK, MessageBoxIcon.Information );
+                    MessageBox.Show("Configuration changed successfully!" , "Info", MessageBoxButtons.OK, MessageBoxIcon.Information );
                 }
                 else
                 {
                     if (retstr == "91AE")
                     {
-                        MessageBox.Show("更改配置操作，卡片返回代码：" + retstr + "，说明：更改为随机UID指令被禁止或密码未认证或密码不对，请先用正确的密码号进行认证再试！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Change config, card return code: " + retstr + ", Description: Change to random UID command disabled, key not authenticated, or key incorrect. Please authenticate with the correct key first!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("更改配置操作，卡片返回代码：" + retstr + "，说明：" + RetTextFromStr(retstr), "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Change config, card return code: " + retstr + ", Description: " + RetTextFromStr(retstr), "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -827,7 +827,7 @@ namespace Ntag424DNA
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox4.Text = "百度";
+            textBox4.Text = "Baidu";
             comboBox4.SelectedIndex = 1;
             textBox5.Text = "baidu.com?uid=00000000000000000000000000000000";
 
@@ -860,7 +860,7 @@ namespace Ntag424DNA
 
         private void button9_Click(object sender, EventArgs e)
         {
-            textBox4.Text = "百度";
+            textBox4.Text = "Baidu";
             comboBox4.SelectedIndex = 1;
             textBox5.Text = "baidu.com?uid=00000000000000x000000";
 
@@ -935,7 +935,7 @@ namespace Ntag424DNA
                 byte[] keybuff = new byte[200];
                 if (checkhexstr(textBox8.Text.Trim(), 16, keybuff) == false)
                 {
-                    MessageBox.Show("十六进制认证密钥输入错误，请输入16字节认证密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hex auth key input error, please enter 16 bytes of auth key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textBox8.Select();
                     return;
                 }
@@ -976,7 +976,7 @@ namespace Ntag424DNA
             byte status = tagbuf_adduri(languagecodestr, languagecodestrlen, titlestr, titlestrlen, uriheaderindex, uristr, uristrlen); //可以用此方法写入多条记录
             if (status > 0)
             {
-                MessageBox.Show("将写卡信息加入写卡缓冲时返回错误代码：" + status.ToString("D") , "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error adding to write buffer, error code: " + status.ToString("D") , "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             byte[] mypiccserial = new byte[7];
@@ -990,7 +990,7 @@ namespace Ntag424DNA
                 {
                     carduid = carduid + mypiccserial[i].ToString("X02");
                 }
-                MessageBox.Show(carduid + "，URI网址写入成功！！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(carduid + ", URI written to card successfully!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else { MessageDispInfo(status); }
         }
@@ -1026,7 +1026,7 @@ namespace Ntag424DNA
                 byte[] keybuff = new byte[200];
                 if (checkhexstr(textBox8.Text.Trim(), 16, keybuff) == false)
                 {
-                    MessageBox.Show("十六进制认证密钥输入错误，请输入16字节认证密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hex auth key input error, please enter 16 bytes of auth key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textBox8.Select();
                     return;
                 }
@@ -1057,7 +1057,7 @@ namespace Ntag424DNA
                 byte[] keybuff = new byte[200];
                 if (checkhexstr(textBox10.Text.Trim(), 16, keybuff) == false)
                 {
-                    MessageBox.Show("十六进制SDM元数据读取验证密码输入错误，请输入16字节正确的验证密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hex SDM metadata read key input error, please enter 16 bytes of correct verification key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textBox10.Select();
                     return;
                 }
@@ -1068,7 +1068,7 @@ namespace Ntag424DNA
 
                 if (checkhexstr(textBox11.Text.Trim(), 16, keybuff) == false)
                 {
-                    MessageBox.Show("十六进制CMAC验证密码输入错误，请输入16字节正确的CMAC验证密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Hex CMAC verification key input error, please enter 16 bytes of correct CMAC key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textBox11.Select();
                     return;
                 }
@@ -1103,11 +1103,11 @@ namespace Ntag424DNA
                 //Clipboard.SetDataObject(ndefstr);
                 if (status == 0)
                 {
-                    MessageBox.Show(carduid + " 读卡成功！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(carduid + " Read card successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show(carduid + " 返回的线路保护MAC对比错误！" , "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(carduid + " Line protection MAC comparison error!" , "Info", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else { MessageDispInfo(status); }
@@ -1309,7 +1309,7 @@ namespace Ntag424DNA
                         }
                         else
                         {
-                            MessageBox.Show("计数器数据位置输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Counter data offset input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }                             
                     }
@@ -1327,7 +1327,7 @@ namespace Ntag424DNA
                         }
                         else
                         {
-                            MessageBox.Show("PICCDataOffset输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("PICCDataOffset input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }    
                     }
@@ -1345,7 +1345,7 @@ namespace Ntag424DNA
                     }
                     else
                     {
-                        MessageBox.Show("SDMMACInputOffset输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("SDMMACInputOffset input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
 
@@ -1360,7 +1360,7 @@ namespace Ntag424DNA
                         }
                         else
                         {
-                            MessageBox.Show("SDMENCOffset输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("SDMENCOffset input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
@@ -1373,7 +1373,7 @@ namespace Ntag424DNA
                         }
                         else
                         {
-                            MessageBox.Show("SDMENCLength输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("SDMENCLength input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }    
                     }
@@ -1387,7 +1387,7 @@ namespace Ntag424DNA
                     }
                     else
                     {
-                        MessageBox.Show("SDMENCOffset输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("SDMENCOffset input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -1403,7 +1403,7 @@ namespace Ntag424DNA
                     }
                     else
                     {
-                        MessageBox.Show("计数器限额值输入错误！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Counter limit value input error!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -1414,7 +1414,7 @@ namespace Ntag424DNA
             {
                 if ((settingsbuf[3] & 0xC0) == 0)
                 {
-                    MessageBox.Show("当开启SDM镜像时，必须开启UID镜像或计数器镜像！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("When SDM mirror is enabled, UID mirror or counter mirror must also be enabled!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -1422,7 +1422,7 @@ namespace Ntag424DNA
                 {
                     if ((settingsbuf[5] & 0xF0) == 0xf0)
                     {
-                        MessageBox.Show("当启用UID镜像时，SDM元数据读取访问权限不能为禁止！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("When UID mirror is enabled, SDM metadata read access cannot be Disabled!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -1430,7 +1430,7 @@ namespace Ntag424DNA
                 {
                     if ((settingsbuf[5] & 0xF0) < 0xf0)
                     {
-                        MessageBox.Show("当不开启UID镜像时，SDM元数据读取访问权限只能为禁止！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("When UID mirror is disabled, SDM metadata read access must be Disabled!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -1439,7 +1439,7 @@ namespace Ntag424DNA
                 {
                     if ((settingsbuf[4] & 0x0f) <0x0f)
                     {
-                        MessageBox.Show("当不开启计数器镜像时，SDM计数器检索密钥只能为禁止！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("When counter mirror is disabled, SDM counter retrieval key must be set to Disabled!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
@@ -1483,19 +1483,19 @@ namespace Ntag424DNA
                     if ((settingsbuf[3] & 0x10) > 0)        //SDMENCFileData
                     {
                         if (SDMENCOffset < SDMMACInputOffset){
-                            MessageBox.Show("SDMENCOffset不能小于SDMMACInputOffset！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("SDMENCOffset cannot be less than SDMMACInputOffset!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
                         if (SDMENCLength < 32)
                         {
-                            MessageBox.Show("SDMENCLength不能小于32！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("SDMENCLength cannot be less than 32!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
 
                         if (SDMMACOffset < (SDMENCOffset + SDMENCLength))
                         {
-                            MessageBox.Show("SDMMACOffset不能小于(SDMENCOffset + SDMENCLength)！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("SDMMACOffset cannot be less than (SDMENCOffset + SDMENCLength)!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                     }
@@ -1503,7 +1503,7 @@ namespace Ntag424DNA
                     {
                         if (SDMMACOffset < SDMMACInputOffset)
                         {
-                            MessageBox.Show("SDMMACOffset不能小于SDMMACInputOffset！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("SDMMACOffset cannot be less than SDMMACInputOffset!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                     }
@@ -1522,7 +1522,7 @@ namespace Ntag424DNA
             if (strls == "9100")
             {
                 pcdbeep(50);
-                MessageBox.Show("更改配置成功！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Configuration changed successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -1530,16 +1530,16 @@ namespace Ntag424DNA
                 {
                     if (comboBox5.SelectedIndex == 1)
                     {
-                        MessageBox.Show("卡片返回错误代码：" + strls + "，更改指令被禁止或密码未认证或密码不对，请先用正确的密码号进行认证再试！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Card returned error code: " + strls + ", change command disabled, key not authenticated, or key incorrect. Please authenticate with the correct key first!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("卡片返回错误代码：" + strls + "，更改指令被禁止或不支持明文操作，请先用正确的密码号进行认证并且选择“密文+MAC保护的通信模式”再试！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Card returned error code: " + strls + ", change command disabled or plaintext operation not supported. Please authenticate with the correct key and select 'Encrypted + MAC Protection' comm mode, then try again!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("卡片返回错误代码：" + strls + "说明：" + RetTextFromStr(strls), "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Card returned error code: " + strls + ", Description: " + RetTextFromStr(strls), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -1570,7 +1570,7 @@ namespace Ntag424DNA
             string strls = retsw[0].ToString("X02") + retsw[1].ToString("X02");
             if (status > 0)
             {
-                MessageBox.Show("函数异常："+status.ToString()+",卡片返回错误代码：" + strls + "说明：" + RetTextFromStr(strls), "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Function error: "+status.ToString()+", card returned error code: " + strls + ", Description: " + RetTextFromStr(strls), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -1864,17 +1864,17 @@ namespace Ntag424DNA
                 textBox9.Text = strls;
 
                 pcdbeep(50);
-                MessageBox.Show("读取卡配置信息成功！", "示例提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Read card configuration successful!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 if (strls == "917E")
                 {
-                    MessageBox.Show("指令长度错误，如果上一条操作为密码认证，本次指令必需用密文+MAC保护的通信模式，否则用明文的通信模式！" , "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Instruction length error. If the previous operation was key authentication, this command must use Encrypted + MAC comm mode, otherwise use plaintext comm mode!" , "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("卡片返回错误代码：" + strls + "说明：" + RetTextFromStr(strls), "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);                     
+                    MessageBox.Show("Card returned error code: " + strls + ", Description: " + RetTextFromStr(strls), "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);                     
                 }
             }
         }
@@ -1949,7 +1949,7 @@ namespace Ntag424DNA
             byte[] keybuff = new byte[200];
             if (checkhexstr(textBox8.Text.Trim(), 16, keybuff) == false)
             {
-                MessageBox.Show("十六进制认证密钥输入错误，请输入16字节认证密钥！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hex auth key input error, please enter 16 bytes of auth key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox8.Select();
                 return;
             }
@@ -1972,7 +1972,7 @@ namespace Ntag424DNA
                 {
                     carduid = carduid + mypiccserial[i].ToString("X02");
                 }
-                MessageBox.Show("读真实UID卡号成功！真实UID卡号：" + carduid, "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Real UID read successfully! Real UID: " + carduid, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
