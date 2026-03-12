@@ -1,4 +1,4 @@
-## Instructions
+## Instructions for authenticated URL visit
 
 - Install Visual Code with C# support
 - Open project via Ntag424DNA.csproj file
@@ -29,3 +29,6 @@
 - SDM Counter retrieval - Disabled
 - Ensure 'Comm Mode for This Operation' is set to - Encrypted + Mac protocol
 - Click - Modify Card configuration
+
+
+**Don't forget to change the default keys before using in prod**
