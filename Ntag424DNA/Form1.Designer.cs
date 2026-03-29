@@ -1636,6 +1636,7 @@ namespace Ntag424DNA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1644, 1350);
 
             ///// NEW CODE /////
