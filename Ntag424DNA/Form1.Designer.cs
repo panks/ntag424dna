@@ -1,4 +1,4 @@
-﻿namespace Ntag424DNA
+namespace Ntag424DNA
 {
     partial class Form1
     {
@@ -129,6 +129,15 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button15 = new System.Windows.Forms.Button();
+
+            ///// NEW CODE /////
+            this.label_OldMasterKey = new System.Windows.Forms.Label();
+            this.txtOldMasterKey = new System.Windows.Forms.TextBox();
+            this.label_NewMasterKey = new System.Windows.Forms.Label();
+            this.txtNewMasterKey = new System.Windows.Forms.TextBox();
+            this.btnChangeAllKeys = new System.Windows.Forms.Button();
+            ////////////////////
+            
             ((System.ComponentModel.ISupportInitialize)(this.editkeyid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.keyid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -1460,13 +1469,70 @@
             this.button15.Text = "Read Real UID";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
+
+            ///// NEW CODE /////
+            // 
+            // label_OldMasterKey
+            // 
+            this.label_OldMasterKey.AutoSize = true;
+            this.label_OldMasterKey.Location = new System.Drawing.Point(10, 1070);
+            this.label_OldMasterKey.Name = "label_OldMasterKey";
+            this.label_OldMasterKey.Size = new System.Drawing.Size(120, 18);
+            this.label_OldMasterKey.TabIndex = 124;
+            this.label_OldMasterKey.Text = "Old Master Key (Hex):";
+            // 
+            // txtOldMasterKey
+            // 
+            this.txtOldMasterKey.Location = new System.Drawing.Point(190, 1067);
+            this.txtOldMasterKey.Name = "txtOldMasterKey";
+            this.txtOldMasterKey.Size = new System.Drawing.Size(350, 28);
+            this.txtOldMasterKey.TabIndex = 125;
+            this.txtOldMasterKey.Text = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";
+            // 
+            // label_NewMasterKey
+            // 
+            this.label_NewMasterKey.AutoSize = true;
+            this.label_NewMasterKey.Location = new System.Drawing.Point(560, 1070);
+            this.label_NewMasterKey.Name = "label_NewMasterKey";
+            this.label_NewMasterKey.Size = new System.Drawing.Size(120, 18);
+            this.label_NewMasterKey.TabIndex = 126;
+            this.label_NewMasterKey.Text = "New Key (Hex):";
+            // 
+            // txtNewMasterKey
+            // 
+            this.txtNewMasterKey.Location = new System.Drawing.Point(700, 1067);
+            this.txtNewMasterKey.Name = "txtNewMasterKey";
+            this.txtNewMasterKey.Size = new System.Drawing.Size(350, 28);
+            this.txtNewMasterKey.TabIndex = 127;
+            this.txtNewMasterKey.Text = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";
+            // 
+            // btnChangeAllKeys
+            // 
+            this.btnChangeAllKeys.Location = new System.Drawing.Point(1070, 1062);
+            this.btnChangeAllKeys.Name = "btnChangeAllKeys";
+            this.btnChangeAllKeys.Size = new System.Drawing.Size(200, 35);
+            this.btnChangeAllKeys.TabIndex = 128;
+            this.btnChangeAllKeys.Text = "Change All Keys";
+            this.btnChangeAllKeys.UseVisualStyleBackColor = true;
+            this.btnChangeAllKeys.Click += new System.EventHandler(this.btnChangeAllKeys_Click);
+            ////////////////////
+            
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1644, 1082);
+            this.ClientSize = new System.Drawing.Size(1644, 1162);
+
+            ///// NEW CODE /////
             this.Controls.Add(this.button15);
+            this.Controls.Add(this.label_OldMasterKey);
+            this.Controls.Add(this.txtOldMasterKey);
+            this.Controls.Add(this.label_NewMasterKey);
+            this.Controls.Add(this.txtNewMasterKey);
+            this.Controls.Add(this.btnChangeAllKeys);
+            ////////////////////
+
             this.Controls.Add(this.textBox12);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label39);
@@ -1648,6 +1714,14 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Button button15;
+
+        ///// NEW CODE /////
+        private System.Windows.Forms.Label label_OldMasterKey;
+        private System.Windows.Forms.TextBox txtOldMasterKey;
+        private System.Windows.Forms.Label label_NewMasterKey;
+        private System.Windows.Forms.TextBox txtNewMasterKey;
+        private System.Windows.Forms.Button btnChangeAllKeys;
+        ////////////////////
     }
 }
 

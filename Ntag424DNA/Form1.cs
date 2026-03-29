@@ -2000,7 +2000,115 @@ namespace Ntag424DNA
 
         }
 
+        ///// NEW CODE /////
 
+        private void btnChangeAllKeys_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Change All Keys' button clicked.");
+            byte[] authkeybuf = new byte[24];
+            byte[] newkeybuf = new byte[24];
+            byte[] retsw = new byte[2];
+            int keylen = 16;
+
+            if (checkhexstr(txtOldMasterKey.Text.Trim(), keylen, authkeybuf) == false)
+            {
+                MessageBox.Show("Hex Old Master Key input error, please enter " + keylen.ToString("D") + " bytes of hex old key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (checkhexstr(txtNewMasterKey.Text.Trim(), keylen, newkeybuf) == false)
+            {
+                MessageBox.Show("Hex New Key input error, please enter " + keylen.ToString("D") + " bytes of hex new key!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Step 1: Activate Ntag 424
+            if (!ActivateNtag()) return;
+
+            // Step 2: Select 424 Card ISO DF Name (D2 76 00 00 85 01 01)
+            byte[] sendbuf = new byte[128];
+            byte[] revbuf = new byte[128];
+            byte[] revbuflen = new byte[4];
+            byte[] databuf = new byte[] { 0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01 };
+            
+            sendbuf[0] = 0x00;
+            sendbuf[1] = 0xA4;
+            sendbuf[2] = 0x04; // Select by DF name
+            sendbuf[3] = 0x00; // Return FCI
+            sendbuf[4] = 7;
+            for (int i = 0; i < 7; i++) sendbuf[i + 5] = databuf[i];
+            
+            System.Diagnostics.Debug.WriteLine("[Log] Selecting 424 Card ISO DF Name...");
+            byte selStatus = cpuisoapdu(sendbuf, 13, revbuf, revbuflen);
+            if (selStatus != 0 && selStatus != 55)
+            {
+                 System.Diagnostics.Debug.WriteLine($"[Log] Select card app failed with status: {selStatus}");
+                 MessageBox.Show("Select card app failed: " + selStatus.ToString("D"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+            }
+            System.Diagnostics.Debug.WriteLine("[Log] Select card app succeeded.");
+
+            // Authenticate with Key 0 (Master Key) using EV2First
+            if (!AuthenticateKey(authkeybuf, 0, 0)) return;
+
+            byte status;
+            string retstr;
+
+            // Iterate backwards from Key 4 to Key 0
+            for (int k = 4; k >= 0; k--)
+            {
+                System.Diagnostics.Debug.WriteLine($"[Log] Changing Key {k}...");
+                status = ntagchangkey(newkeybuf, Convert.ToByte(k), 1, authkeybuf, retsw);
+                retstr = retsw[0].ToString("X2") + retsw[1].ToString("X2");
+
+                if (status > 0)
+                {
+                    System.Diagnostics.Debug.WriteLine($"[Log] Change Key {k} failed with status: {status}");
+                    MessageBox.Show("Change key " + k + " failed: " + status.ToString("D") + ", return code: " + retstr + "\r\nDescription: " + RetTextFromStr(retstr), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                System.Diagnostics.Debug.WriteLine($"[Log] Change Key {k} succeeded.");
+            }
+
+            MessageBox.Show("Successfully changed all keys (0-4)!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private bool ActivateNtag()
+        {
+            System.Diagnostics.Debug.WriteLine("[Log] Activating Ntag 424...");
+            byte[] mypiccserial = new byte[7];
+            byte[] myparam = new byte[4];
+            byte[] AtqaSak = new byte[3];
+            byte[] myver = new byte[1];
+            byte[] mycode = new byte[1];
+            byte actStatus = cpurequest1(mypiccserial, myparam, myver, mycode, AtqaSak);
+            if (actStatus != 0 && actStatus != 52)
+            {
+                System.Diagnostics.Debug.WriteLine($"[Log] Activate Ntag 424 failed with status: {actStatus}");
+                MessageDispInfo(actStatus);
+                return false;
+            }
+            System.Diagnostics.Debug.WriteLine("[Log] Activate Ntag 424 succeeded.");
+            return true;
+        }
+
+        private bool AuthenticateKey(byte[] authkeybuf, byte keyId, byte authMode)
+        {
+            System.Diagnostics.Debug.WriteLine($"[Log] Authenticating with Key {keyId}...");
+            byte[] retsw = new byte[2];
+            byte status = desfireauthkeyev2(authkeybuf, keyId, authMode, retsw);
+            string retstr = retsw[0].ToString("X2") + retsw[1].ToString("X2");
+
+            if (status > 0)
+            {
+                System.Diagnostics.Debug.WriteLine($"[Log] Authentication failed with status: {status}");
+                MessageBox.Show("Authentication failed: " + status.ToString("D") + ", return code: " + retstr + "\r\nDescription: " + RetTextFromStr(retstr), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            System.Diagnostics.Debug.WriteLine($"[Log] Authentication with Key {keyId} succeeded.");
+            return true;
+        }
+        ////////////////////
 
     }
 }
