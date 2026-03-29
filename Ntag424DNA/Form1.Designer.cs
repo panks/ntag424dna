@@ -146,6 +146,7 @@ namespace Ntag424DNA
             this.txtAutomateFullUrl = new System.Windows.Forms.TextBox();
             this.lblAutomateOffsets = new System.Windows.Forms.Label();
             this.btnAutomateWrite = new System.Windows.Forms.Button();
+            this.btnChangeKeysAndWrite = new System.Windows.Forms.Button();
             ////////////////////
             
             ((System.ComponentModel.ISupportInitialize)(this.editkeyid)).BeginInit();
@@ -1618,6 +1619,16 @@ namespace Ntag424DNA
             this.lblAutomateOffsets.Size = new System.Drawing.Size(250, 18);
             this.lblAutomateOffsets.TabIndex = 138;
             this.lblAutomateOffsets.Text = "Offsets: PICCData: 7, MAC: 39";
+            //
+            // btnChangeKeysAndWrite
+            //
+            this.btnChangeKeysAndWrite.Location = new System.Drawing.Point(1050, 1280);
+            this.btnChangeKeysAndWrite.Name = "btnChangeKeysAndWrite";
+            this.btnChangeKeysAndWrite.Size = new System.Drawing.Size(350, 35);
+            this.btnChangeKeysAndWrite.TabIndex = 139;
+            this.btnChangeKeysAndWrite.Text = "Change All Keys && Write to Card";
+            this.btnChangeKeysAndWrite.UseVisualStyleBackColor = true;
+            this.btnChangeKeysAndWrite.Click += new System.EventHandler(this.btnChangeKeysAndWrite_Click);
             ////////////////////
             
             // 
@@ -1638,6 +1649,7 @@ namespace Ntag424DNA
             this.Controls.Add(this.label_AutomateFullUrl);
             this.Controls.Add(this.txtAutomateFullUrl);
             this.Controls.Add(this.lblAutomateOffsets);
+            this.Controls.Add(this.btnChangeKeysAndWrite);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.label_OldMasterKey);
             this.Controls.Add(this.txtOldMasterKey);
@@ -1844,6 +1856,7 @@ namespace Ntag424DNA
         private System.Windows.Forms.Label label_AutomateFullUrl;
         private System.Windows.Forms.TextBox txtAutomateFullUrl;
         private System.Windows.Forms.Label lblAutomateOffsets;
+        private System.Windows.Forms.Button btnChangeKeysAndWrite;
         ////////////////////
     }
 }
