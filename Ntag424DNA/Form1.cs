@@ -429,6 +429,9 @@ namespace Ntag424DNA
             comboBox11.SelectedIndex = 0;
 
             comboBox13.SelectedIndex = 0;
+            
+            // New Automate UI Defaults
+            comboBox_AutomatePrefix.SelectedIndex = 1; // https://
 
             String Titlestr = sGetINI("./syssetup.ini", "DefaultSetup", "textBox4", "");
             String UriStr = sGetINI("./syssetup.ini", "DefaultSetup", "textBox5", "");
@@ -2107,6 +2110,185 @@ namespace Ntag424DNA
             }
             System.Diagnostics.Debug.WriteLine($"[Log] Authentication with Key {keyId} succeeded.");
             return true;
+        }
+        private void AutomateUrl_Changed(object sender, EventArgs e)
+        {
+            try 
+            {
+                string baseUrl = txtAutomateBaseUrl.Text.Trim();
+                string prefix = comboBox_AutomatePrefix.Text; 
+                string suffix = "/?picc_data=00000000000000000000000000000000&cmac=0000000000000000";
+                txtAutomateFullUrl.Text = prefix + baseUrl + suffix;
+
+                int offset1 = 7 + baseUrl.Length + "/?picc_data=".Length;
+                int offset2 = offset1 + 32 + "&cmac=".Length;
+
+                lblAutomateOffsets.Text = $"Offsets: PICCData: {offset1}, MAC: {offset2}";
+            }
+            catch { }
+        }
+
+        private void btnAutomateWrite_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Automate Write to Card' button clicked.");
+            byte[] authkeybuf = new byte[24];
+            int keylen = 16;
+
+            if (checkhexstr(txtAutomateAuthKey.Text.Trim(), keylen, authkeybuf) == false)
+            {
+                MessageBox.Show("Hex Auth Key input error, please enter 16 bytes!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string baseUrl = txtAutomateBaseUrl.Text.Trim();
+            if (string.IsNullOrEmpty(baseUrl))
+            {
+                MessageBox.Show("Please enter a Base URL.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Step 1: Activate and Select App
+            if (!ActivateNtag()) return;
+
+            byte[] sendbuf = new byte[128];
+            byte[] revbuf = new byte[128];
+            byte[] revbuflen = new byte[4];
+            byte[] databuf = new byte[] { 0xD2, 0x76, 0x00, 0x00, 0x85, 0x01, 0x01 };
+            
+            sendbuf[0] = 0x00;
+            sendbuf[1] = 0xA4;
+            sendbuf[2] = 0x04; // Select by DF name
+            sendbuf[3] = 0x00; // Return FCI
+            sendbuf[4] = 7;
+            for (int i = 0; i < 7; i++) sendbuf[i + 5] = databuf[i];
+            
+            System.Diagnostics.Debug.WriteLine("[Log] Selecting 424 Card ISO DF Name...");
+            byte selStatus = cpuisoapdu(sendbuf, 13, revbuf, revbuflen);
+            if (selStatus != 0 && selStatus != 55)
+            {
+                 System.Diagnostics.Debug.WriteLine($"[Log] Select card app failed: {selStatus}");
+                 MessageBox.Show("Select card app failed: " + selStatus.ToString("D"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+            }
+
+            // Authenticate BEFORE we do anything else (like Writing URI)
+            // Especially important for rewrite on locked cards.
+            System.Diagnostics.Debug.WriteLine("[Log] Authenticating Auth Key 0...");
+            if (!AuthenticateKey(authkeybuf, 0, 0)) return;
+
+            // Phase 1: Write URI to card
+            System.Diagnostics.Debug.WriteLine("[Log] Phase 1: Writing URI to card...");
+            byte myctrlword = 0x40;   // Requires Auth Key (Plaintext)
+            byte[] picckey = new byte[200];
+            
+            picckey[0] = 4;     // AES, use 71 command for authentication internally
+            picckey[1] = 0;     // Key 0
+            for (int k = 0; k < 16; k++)
+            {
+                picckey[k + 2] = authkeybuf[k];
+            }
+            
+            string languagecodestr = "en"; 
+            int languagecodestrlen = languagecodestr.Length;
+            string titlestr = ""; 
+            int titlestrlen = 0;
+            
+            int uriheaderindex = (comboBox_AutomatePrefix.Text == "http://") ? 3 : 4; 
+            
+            string uristr = baseUrl + "/?picc_data=00000000000000000000000000000000&cmac=0000000000000000";
+            int uristrlen = System.Text.Encoding.GetEncoding(936).GetBytes(uristr).Length;
+
+            tagbuf_forumtype4_clear(); 
+            byte wpStatus = tagbuf_adduri(languagecodestr, languagecodestrlen, titlestr, titlestrlen, uriheaderindex, uristr, uristrlen);
+            if (wpStatus > 0)
+            {
+                System.Diagnostics.Debug.WriteLine($"[Log] Error adding uri to buffer: {wpStatus}");
+                MessageBox.Show("Error adding to write buffer: " + wpStatus.ToString("D"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            byte[] mypiccserial = new byte[7];
+            byte[] mypiccseriallen = new byte[1];
+            byte wStatus = forumtype4_write_ndeftag(myctrlword, mypiccserial, mypiccseriallen, picckey); 
+            if (wStatus != 0)
+            {
+                System.Diagnostics.Debug.WriteLine($"[Log] Write URI to card failed: {wStatus}");
+                MessageDispInfo(wStatus);
+                return;
+            }
+            System.Diagnostics.Debug.WriteLine("[Log] URI successfully written to card.");
+
+            // Re-authenticate: forumtype4_write_ndeftag invalidates the EV2 session
+            System.Diagnostics.Debug.WriteLine("[Log] Re-authenticating after NDEF write...");
+            if (!AuthenticateKey(authkeybuf, 0, 0)) return;
+
+            // Phase 2: Modify Card Configuration
+            System.Diagnostics.Debug.WriteLine("[Log] Phase 2: Modifying Card Configuration...");
+
+            byte[] settingsbuf = new byte[32];
+            
+            // File Settings
+            settingsbuf[0] = 0x40;  // Plaintext Data (0x00) + SDM Enabled (0x40) // Comm Mode Plaintext
+            
+            // Access Rights: Read-Only (0x0e), Write-Only (Key 0 = 0x00), Read-Write (Key 0 = 0x00), Change (Key 0 = 0x00)
+            settingsbuf[1] = 0x0E; // Read-Only = E, Write-Only = 0
+            settingsbuf[2] = 0x00; // Read-Write = 0, Change = 0
+
+            // SDMOptions: Encoding ASCII (1), UID Mirror (0x80), Counter Mirror (0x40)
+            settingsbuf[3] = 0xC1;
+
+            // SDMAccessRights: Upper 4 bits free (0xF0), Counter Retrieval (Key 0 = 0x00)
+            settingsbuf[4] = 0xF0;
+
+            // SDMMetaRead Access & FileRead Access: MetaRead (Key 0 = 0x00), CMAC Key (Key 0 = 0x00)
+            settingsbuf[5] = 0x00;
+
+            int j = 6;
+            int offset1 = 7 + baseUrl.Length + "/?picc_data=".Length;
+            int offset2 = offset1 + 32 + "&cmac=".Length;
+            
+            byte[] bytearray = new byte[3];
+            
+            // ENCPICCDataOffset
+            if (Get3Byte((long)offset1, bytearray))
+            {
+                settingsbuf[j] = bytearray[0];
+                settingsbuf[j+1] = bytearray[1];
+                settingsbuf[j+2] = bytearray[2];
+                j += 3;
+            }
+            
+            // SDMMACInputOffset
+            if (Get3Byte((long)offset1, bytearray))
+            {
+                settingsbuf[j] = bytearray[0];
+                settingsbuf[j+1] = bytearray[1];
+                settingsbuf[j+2] = bytearray[2];
+                j += 3;
+            }
+            
+            // SDMMACOffset
+            if (Get3Byte((long)offset2, bytearray))
+            {
+                settingsbuf[j] = bytearray[0];
+                settingsbuf[j+1] = bytearray[1];
+                settingsbuf[j+2] = bytearray[2];
+                j += 3;
+            }
+            
+            byte[] retsw = new byte[2];
+            byte configStatus = ntagchangefilesettings(1, 2, settingsbuf, j, retsw);
+            string retstr = retsw[0].ToString("X2") + retsw[1].ToString("X2");
+
+            if (configStatus > 0)
+            {
+                System.Diagnostics.Debug.WriteLine($"[Log] Modify Card Config failed: {configStatus}");
+                MessageBox.Show("Modify Card Config failed: " + configStatus.ToString("D") + ", return code: " + retstr + "\r\nDescription: " + RetTextFromStr(retstr), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            System.Diagnostics.Debug.WriteLine("[Log] Automated configuration complete.");
+            MessageBox.Show("Successfully wrote URI and updated SDM configuration!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         ////////////////////
 

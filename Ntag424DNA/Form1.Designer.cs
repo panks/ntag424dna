@@ -136,6 +136,16 @@ namespace Ntag424DNA
             this.label_NewMasterKey = new System.Windows.Forms.Label();
             this.txtNewMasterKey = new System.Windows.Forms.TextBox();
             this.btnChangeAllKeys = new System.Windows.Forms.Button();
+            this.label_AutomatePrefix = new System.Windows.Forms.Label();
+            this.comboBox_AutomatePrefix = new System.Windows.Forms.ComboBox();
+            this.label_AutomateBaseUrl = new System.Windows.Forms.Label();
+            this.txtAutomateBaseUrl = new System.Windows.Forms.TextBox();
+            this.label_AutomateAuthKey = new System.Windows.Forms.Label();
+            this.txtAutomateAuthKey = new System.Windows.Forms.TextBox();
+            this.label_AutomateFullUrl = new System.Windows.Forms.Label();
+            this.txtAutomateFullUrl = new System.Windows.Forms.TextBox();
+            this.lblAutomateOffsets = new System.Windows.Forms.Label();
+            this.btnAutomateWrite = new System.Windows.Forms.Button();
             ////////////////////
             
             ((System.ComponentModel.ISupportInitialize)(this.editkeyid)).BeginInit();
@@ -1475,7 +1485,7 @@ namespace Ntag424DNA
             // label_OldMasterKey
             // 
             this.label_OldMasterKey.AutoSize = true;
-            this.label_OldMasterKey.Location = new System.Drawing.Point(10, 1070);
+            this.label_OldMasterKey.Location = new System.Drawing.Point(10, 1120);
             this.label_OldMasterKey.Name = "label_OldMasterKey";
             this.label_OldMasterKey.Size = new System.Drawing.Size(120, 18);
             this.label_OldMasterKey.TabIndex = 124;
@@ -1483,16 +1493,16 @@ namespace Ntag424DNA
             // 
             // txtOldMasterKey
             // 
-            this.txtOldMasterKey.Location = new System.Drawing.Point(190, 1067);
+            this.txtOldMasterKey.Location = new System.Drawing.Point(190, 1117);
             this.txtOldMasterKey.Name = "txtOldMasterKey";
-            this.txtOldMasterKey.Size = new System.Drawing.Size(350, 28);
+            this.txtOldMasterKey.Size = new System.Drawing.Size(450, 28);
             this.txtOldMasterKey.TabIndex = 125;
             this.txtOldMasterKey.Text = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";
             // 
             // label_NewMasterKey
             // 
             this.label_NewMasterKey.AutoSize = true;
-            this.label_NewMasterKey.Location = new System.Drawing.Point(560, 1070);
+            this.label_NewMasterKey.Location = new System.Drawing.Point(660, 1120);
             this.label_NewMasterKey.Name = "label_NewMasterKey";
             this.label_NewMasterKey.Size = new System.Drawing.Size(120, 18);
             this.label_NewMasterKey.TabIndex = 126;
@@ -1500,21 +1510,114 @@ namespace Ntag424DNA
             // 
             // txtNewMasterKey
             // 
-            this.txtNewMasterKey.Location = new System.Drawing.Point(700, 1067);
+            this.txtNewMasterKey.Location = new System.Drawing.Point(800, 1117);
             this.txtNewMasterKey.Name = "txtNewMasterKey";
-            this.txtNewMasterKey.Size = new System.Drawing.Size(350, 28);
+            this.txtNewMasterKey.Size = new System.Drawing.Size(450, 28);
             this.txtNewMasterKey.TabIndex = 127;
             this.txtNewMasterKey.Text = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";
             // 
             // btnChangeAllKeys
             // 
-            this.btnChangeAllKeys.Location = new System.Drawing.Point(1070, 1062);
+            this.btnChangeAllKeys.Location = new System.Drawing.Point(1270, 1112);
             this.btnChangeAllKeys.Name = "btnChangeAllKeys";
             this.btnChangeAllKeys.Size = new System.Drawing.Size(200, 35);
             this.btnChangeAllKeys.TabIndex = 128;
             this.btnChangeAllKeys.Text = "Change All Keys";
             this.btnChangeAllKeys.UseVisualStyleBackColor = true;
             this.btnChangeAllKeys.Click += new System.EventHandler(this.btnChangeAllKeys_Click);
+            // 
+            // label_AutomatePrefix
+            // 
+            this.label_AutomatePrefix.AutoSize = true;
+            this.label_AutomatePrefix.Location = new System.Drawing.Point(10, 1203);
+            this.label_AutomatePrefix.Name = "label_AutomatePrefix";
+            this.label_AutomatePrefix.Size = new System.Drawing.Size(60, 18);
+            this.label_AutomatePrefix.TabIndex = 129;
+            this.label_AutomatePrefix.Text = "Prefix:";
+            // 
+            // comboBox_AutomatePrefix
+            // 
+            this.comboBox_AutomatePrefix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_AutomatePrefix.FormattingEnabled = true;
+            this.comboBox_AutomatePrefix.Items.AddRange(new object[] {
+            "http://",
+            "https://"});
+            this.comboBox_AutomatePrefix.Location = new System.Drawing.Point(75, 1200);
+            this.comboBox_AutomatePrefix.Name = "comboBox_AutomatePrefix";
+            this.comboBox_AutomatePrefix.Size = new System.Drawing.Size(100, 26);
+            this.comboBox_AutomatePrefix.TabIndex = 130;
+            this.comboBox_AutomatePrefix.SelectedIndexChanged += new System.EventHandler(this.AutomateUrl_Changed);
+            // 
+            // label_AutomateBaseUrl
+            // 
+            this.label_AutomateBaseUrl.AutoSize = true;
+            this.label_AutomateBaseUrl.Location = new System.Drawing.Point(185, 1203);
+            this.label_AutomateBaseUrl.Name = "label_AutomateBaseUrl";
+            this.label_AutomateBaseUrl.Size = new System.Drawing.Size(100, 18);
+            this.label_AutomateBaseUrl.TabIndex = 131;
+            this.label_AutomateBaseUrl.Text = "Base URL:";
+            // 
+            // txtAutomateBaseUrl
+            // 
+            this.txtAutomateBaseUrl.Location = new System.Drawing.Point(270, 1200);
+            this.txtAutomateBaseUrl.Name = "txtAutomateBaseUrl";
+            this.txtAutomateBaseUrl.Size = new System.Drawing.Size(300, 28);
+            this.txtAutomateBaseUrl.TabIndex = 132;
+            this.txtAutomateBaseUrl.TextChanged += new System.EventHandler(this.AutomateUrl_Changed);
+            // 
+            // label_AutomateAuthKey
+            // 
+            this.label_AutomateAuthKey.AutoSize = true;
+            this.label_AutomateAuthKey.Location = new System.Drawing.Point(590, 1203);
+            this.label_AutomateAuthKey.Name = "label_AutomateAuthKey";
+            this.label_AutomateAuthKey.Size = new System.Drawing.Size(180, 18);
+            this.label_AutomateAuthKey.TabIndex = 133;
+            this.label_AutomateAuthKey.Text = "Auth Key (Key 0 Hex):";
+            // 
+            // txtAutomateAuthKey
+            // 
+            this.txtAutomateAuthKey.Location = new System.Drawing.Point(780, 1200);
+            this.txtAutomateAuthKey.Name = "txtAutomateAuthKey";
+            this.txtAutomateAuthKey.Size = new System.Drawing.Size(450, 28);
+            this.txtAutomateAuthKey.TabIndex = 134;
+            this.txtAutomateAuthKey.Text = "00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00";
+            // 
+            // btnAutomateWrite
+            // 
+            this.btnAutomateWrite.Location = new System.Drawing.Point(1250, 1195);
+            this.btnAutomateWrite.Name = "btnAutomateWrite";
+            this.btnAutomateWrite.Size = new System.Drawing.Size(150, 35);
+            this.btnAutomateWrite.TabIndex = 135;
+            this.btnAutomateWrite.Text = "Write to Card";
+            this.btnAutomateWrite.UseVisualStyleBackColor = true;
+            this.btnAutomateWrite.Click += new System.EventHandler(this.btnAutomateWrite_Click);
+            // 
+            // label_AutomateFullUrl
+            // 
+            this.label_AutomateFullUrl.AutoSize = true;
+            this.label_AutomateFullUrl.Location = new System.Drawing.Point(10, 1243);
+            this.label_AutomateFullUrl.Name = "label_AutomateFullUrl";
+            this.label_AutomateFullUrl.Size = new System.Drawing.Size(90, 18);
+            this.label_AutomateFullUrl.TabIndex = 136;
+            this.label_AutomateFullUrl.Text = "Full URL:";
+            // 
+            // txtAutomateFullUrl
+            // 
+            this.txtAutomateFullUrl.Location = new System.Drawing.Point(100, 1240);
+            this.txtAutomateFullUrl.Name = "txtAutomateFullUrl";
+            this.txtAutomateFullUrl.ReadOnly = true;
+            this.txtAutomateFullUrl.Size = new System.Drawing.Size(860, 28);
+            this.txtAutomateFullUrl.TabIndex = 137;
+            this.txtAutomateFullUrl.Text = "http:///?picc_data=00000000000000000000000000000000&cmac=0000000000000000";
+            // 
+            // lblAutomateOffsets
+            // 
+            this.lblAutomateOffsets.AutoSize = true;
+            this.lblAutomateOffsets.Location = new System.Drawing.Point(980, 1243);
+            this.lblAutomateOffsets.Name = "lblAutomateOffsets";
+            this.lblAutomateOffsets.Size = new System.Drawing.Size(250, 18);
+            this.lblAutomateOffsets.TabIndex = 138;
+            this.lblAutomateOffsets.Text = "Offsets: PICCData: 7, MAC: 39";
             ////////////////////
             
             // 
@@ -1522,9 +1625,19 @@ namespace Ntag424DNA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1644, 1162);
+            this.ClientSize = new System.Drawing.Size(1644, 1350);
 
             ///// NEW CODE /////
+            this.Controls.Add(this.label_AutomatePrefix);
+            this.Controls.Add(this.comboBox_AutomatePrefix);
+            this.Controls.Add(this.label_AutomateBaseUrl);
+            this.Controls.Add(this.txtAutomateBaseUrl);
+            this.Controls.Add(this.label_AutomateAuthKey);
+            this.Controls.Add(this.txtAutomateAuthKey);
+            this.Controls.Add(this.btnAutomateWrite);
+            this.Controls.Add(this.label_AutomateFullUrl);
+            this.Controls.Add(this.txtAutomateFullUrl);
+            this.Controls.Add(this.lblAutomateOffsets);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.label_OldMasterKey);
             this.Controls.Add(this.txtOldMasterKey);
@@ -1721,6 +1834,16 @@ namespace Ntag424DNA
         private System.Windows.Forms.Label label_NewMasterKey;
         private System.Windows.Forms.TextBox txtNewMasterKey;
         private System.Windows.Forms.Button btnChangeAllKeys;
+        private System.Windows.Forms.Label label_AutomatePrefix;
+        private System.Windows.Forms.ComboBox comboBox_AutomatePrefix;
+        private System.Windows.Forms.Label label_AutomateBaseUrl;
+        private System.Windows.Forms.TextBox txtAutomateBaseUrl;
+        private System.Windows.Forms.Label label_AutomateAuthKey;
+        private System.Windows.Forms.TextBox txtAutomateAuthKey;
+        private System.Windows.Forms.Button btnAutomateWrite;
+        private System.Windows.Forms.Label label_AutomateFullUrl;
+        private System.Windows.Forms.TextBox txtAutomateFullUrl;
+        private System.Windows.Forms.Label lblAutomateOffsets;
         ////////////////////
     }
 }
