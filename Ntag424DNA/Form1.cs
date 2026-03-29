@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -584,6 +584,7 @@ namespace Ntag424DNA
 
         private void button2_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Select Existing Card Application' button clicked.");
             byte[] databuf = new byte[20];
             byte[] sendbuf = new byte[128];
             byte[] revbuf = new byte[128];
@@ -681,6 +682,7 @@ namespace Ntag424DNA
 
         private void button1_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Step 1 Activate Ntag 424' button clicked.");
             byte status;  //'存放返回值
             byte[] mypiccserial = new byte[7];//'卡序列号            
             byte[] myparam = new byte[4];
@@ -724,6 +726,7 @@ namespace Ntag424DNA
 
         private void button18_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Key Authentication' button clicked.");
             byte[] authkeybuf = new byte[24];
             byte[] retsw = new byte[2];
             string retstr;
@@ -927,6 +930,7 @@ namespace Ntag424DNA
 
         private void button11_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Write URI to Card' button clicked.");
             byte myctrlword=0x00;
             byte[] picckey = new byte[200];     //需要认证的密码
 
@@ -1121,6 +1125,7 @@ namespace Ntag424DNA
 
         private void button14_Click(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("[Log] 'Modify Card Configuration' button clicked.");
             byte[] settingsbuf = new byte[32];      //卡数据缓冲：1+2+1+2+3*8=30
             byte[] retsw = new byte[2];             //返回值
 
